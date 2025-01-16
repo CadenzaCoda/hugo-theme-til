@@ -16,5 +16,13 @@
         {{ partial "notes/list.html" . }}
       </section>
     {{ end }}
+    {{- $research := where .RegularPages "Section" "research" -}}
+    {{ with $research }}
+      <section>
+        <h2>Research Notes on {{ $.Title }}</h2>
+
+        {{ partial "research/list.html" . }}
+      </section>
+    {{ end }}
   </div>
 {{ end }}
